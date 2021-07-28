@@ -64,7 +64,7 @@ public class ShiroConfig {
     public ShiroFilterChainDefinition shiroFilterChainDefinition(){
         DefaultShiroFilterChainDefinition chainDefinition=new DefaultShiroFilterChainDefinition();
         Map<String,String> filterMap=new LinkedHashMap<>();
-        filterMap.put("/**","authc");
+        filterMap.put("/**","jwt");
         chainDefinition.addPathDefinitions(filterMap);
         return chainDefinition;
     }

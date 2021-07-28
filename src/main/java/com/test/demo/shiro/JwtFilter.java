@@ -17,6 +17,7 @@ import org.springframework.stereotype.Component;
 
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
@@ -45,7 +46,7 @@ public class JwtFilter extends AuthenticatingFilter {
     @Override
     protected boolean onAccessDenied(ServletRequest servletRequest, ServletResponse servletResponse) throws Exception {
 
-        HttpServerRequest request= (HttpServerRequest)servletRequest;
+        HttpServletRequest request= (HttpServletRequest)servletRequest;
         String jwt=request.getHeader("Authorization");
         if (StringUtils.isEmpty(jwt)){
             return true;
