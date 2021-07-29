@@ -1,11 +1,13 @@
 package com.test.demo.entity;
 
-import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
-import java.io.Serializable;
+import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+
+import javax.validation.constraints.NotBlank;
+import java.io.Serializable;
 
 /**
  * <p>
@@ -31,6 +33,7 @@ public class SysUser implements Serializable {
     /**
      * 登录名
      */
+    @NotBlank(message="昵称不能为空")
     private String loginName;
 
     /**
